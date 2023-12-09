@@ -123,6 +123,13 @@ export default function Home() {
                 it&apos;s implementing cutting-edge frameworks, optimizing
                 performance, or ensuring an exceptional user interface.
               </Typography>
+
+              <Typography variant="h4" className="spr-text-05 mt-6 w-2/3">
+                Apart from professional side,I learn finance and investment
+                fundamentals. I like to track companies Financial Performances
+                and filters out goog stocks for investment. I actively invest in
+                equities.
+              </Typography>
             </Box>
           </Box>
 
