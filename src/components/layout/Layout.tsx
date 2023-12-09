@@ -1,9 +1,8 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactNode } from "react";
 import Head from "next/head";
 
 import { Box } from "@sprinklrjs/spaceweb/box";
 import { Header } from "../header";
-import { Footer } from "../footer";
 
 import { useStickyElement } from "../../hooks/useStickyElement";
 
@@ -27,12 +26,16 @@ export const Layout = ({
           <title>{title}</title>
         </Head>
       ) : null}
-      <Box className="relative flex flex-col w-full h-screen overflow-y-auto">
+      <Box
+        className="relative flex flex-col w-full h-screen overflow-y-auto"
+        style={{ backgroundColor: "#111827" }}
+      >
         <div ref={setStickySentinelRef} />
         <Box
           className={[
             "sticky top-0 z-10",
             {
+              backgroundColor: "#020617",
               boxShadow: isSticky
                 ? "0px 2px 10px rgba(201, 201, 201, 0.5)"
                 : "none",
@@ -41,10 +44,9 @@ export const Layout = ({
         >
           <Header />
         </Box>
-        <StyledBody className="w-full flex flex-col flex-1">
+        <StyledBody className="w-full flex justify-center flex-1">
           {children}
         </StyledBody>
-        <Footer />
       </Box>
     </Box>
   );

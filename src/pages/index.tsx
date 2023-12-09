@@ -1,66 +1,85 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Layout } from "../components/layout";
 import { Box } from "@sprinklrjs/spaceweb/box";
 import { Typography } from "@sprinklrjs/spaceweb/typography";
-import { Carousel } from "../components/carousel";
-import { HomeProductImage } from "../components/HomeProductImage";
-import { ThemeProvider } from "@sprinklrjs/spaceweb/theme";
+import { Button } from "@sprinklrjs/spaceweb/button";
 
-import hyperspaceDark from "@sprinklrjs/spaceweb-themes/hyperspace/dark";
+import { getYears } from "../utils/getYears";
 
-import { PRODUCTS } from "../constants/products";
-import { TABS } from "../components/header/constants";
+const TITLE = "I m Avi Patel";
+const SUB_TITLE = "I'm a Product Engineer @";
+
+const expInYears = getYears("01 Jan 2021");
+const intro = `I work as a Frontend Developer. With over ${expInYears} Years of experience, my
+          portfolio includes expertise in Frontend technology stack like:`;
+
+const TechButton = ({ name }: { name: string }) => (
+  <Button
+    variant="secondary"
+    size="xxxs"
+    className="px-4 cursor-auto rounded-8 border-0"
+    style={{ backgroundColor: "#EAB308" }}
+  >
+    {name}
+  </Button>
+);
 
 export default function Home() {
   return (
-    <Layout title="Smit Hydraulics">
-      <Box className="flex flex-col">
-        <ThemeProvider theme={hyperspaceDark}>
-          <Carousel gap={16} upfrontCount={5} controlsPlacement="horizontal">
-            {PRODUCTS.map((i) => (
-              <HomeProductImage key={i.id} item={i} />
-            ))}
-          </Carousel>
-        </ThemeProvider>
+    <Layout title="Avi Patel">
+      <Box className="flex items-center w-2/3 h-full justify-evenly">
+        <Box className="flex flex-col flex-1 gap-2">
+          <Typography variant="h4" weight="medium" style={{ color: "#EAB308" }}>
+            Hello, Welcome
+          </Typography>
+          <Typography variant="h1" weight="bold" className="spr-text-05 mt-4">
+            {TITLE}
+          </Typography>
+          <Box className="flex items-center">
+            <Typography variant="h2" weight="semibold" className="spr-text-05">
+              {SUB_TITLE}
+            </Typography>
+            <Link
+              href="https://www.sprinklr.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecorationLine: "none" }}
+            >
+              <Typography
+                variant="h2"
+                weight="semibold"
+                className="spr-text-05"
+              >
+                Sprinklr
+              </Typography>
+            </Link>
+          </Box>
+          <Typography
+            variant="bs1"
+            weight="medium"
+            className="w-3/4 mt-4 spr-text-05"
+          >
+            {intro}
+          </Typography>
 
-        <Box className={["flex flex-col gap-4 py-8 px-16 opacity-80"]}>
-          <Typography variant="h1">Who we are?</Typography>
-          <Typography variant="h4">
-            Established in the year 2002, we, “Smit Hydraulics”, are among the
-            leading manufacturers, suppliers and exporters of a wide range of
-            Horizontal Crimping Machine, Hose Crimping Machine, Hydraulic Pipe
-            Crimping Machine, Hose Marking Machine, Roll Marking Machine. We
-            enjoy a remarkable reputation in the industry for being highly
-            committed towards our customers. The products we produce are
-            characterized by quality and effectiveness.{" "}
-          </Typography>
-          <Typography variant="h4">
-            Our products have to go through a number of quality checks before
-            qualifying for sale to the customers. They consume less power
-            thereby increasing the efficiency and decreasing the operating cost.
-            Available in an array of designs and finishes, all our machines are
-            resistant to corrosion. With our manufacturing unit sprawling over a
-            large area, we produce technically advanced hydraulic machines and
-            control systems. We also export our products to different parts of
-            the world, some of the countries where we export our products are
-            Dubai, Australia, South Africa, Middle East. These are designed to
-            make our work easier and faster. We have dedicated ourselves in
-            delivering the best machines. We have gained technical excellence in
-            manufacturing premium quality products which are in compliance to
-            the international standards.
-          </Typography>
-          <Typography variant="h4">
-            Our team of highly experienced and trained professionals works
-            consistently and enthusiastically in order to enhance the quality of
-            our products and services. Under the visionary guidance of &quot;Mr.
-            Vasant Patel&quot; (CEO), we have achieved phenomenal success. We
-            are well known for our ethical business practices and hope to expand
-            our horizons in the coming years.
-          </Typography>
-          <Link href={`/${TABS.ABOUT_US}`}>
-            <Typography variant="bs1">More About Us</Typography>
-          </Link>
+          <Box className="flex gap-4 mt-4">
+            <TechButton name="ReactJs" />
+            <TechButton name="NextJs" />
+            <TechButton name="Typescript" />
+            <TechButton name="GraphQL" />
+          </Box>
+        </Box>
+
+        <Box className="overflow-hidden flex- 1 rounded-8">
+          <Image
+            src="/Avi-Photo.jpeg"
+            width={400}
+            height={550}
+            alt="Picture of the author"
+            style={{ borderRadius: "8px" }}
+          />
         </Box>
       </Box>
     </Layout>
