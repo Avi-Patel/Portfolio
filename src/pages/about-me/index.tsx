@@ -4,7 +4,7 @@ import { Layout } from "../../components/layout";
 import { Box } from "@sprinklrjs/spaceweb/box";
 import { Typography } from "@sprinklrjs/spaceweb/typography";
 import { Button } from "@sprinklrjs/spaceweb/button";
-import TrainingIcon from "@sprinklrjs/spaceweb-icons/solid/Training";
+import { RiGraduationCapFill } from "react-icons/ri";
 
 const yellowColor = "#EAB308";
 
@@ -248,10 +248,14 @@ export default function Home() {
                     <Typography variant="h3" className="spr-text-05">
                       Information And Communication Technology
                     </Typography>
-                    <TrainingIcon
-                      size={14}
-                      className="mx-3"
-                      style={{ fill: yellowColor }}
+                    <RiGraduationCapFill
+                      style={{
+                        fill: yellowColor,
+                        height: 14,
+                        width: 14,
+                        marginLeft: "12px",
+                        marginRight: "12px",
+                      }}
                     />
                     <Typography variant="h3" style={{ color: yellowColor }}>
                       DAIICT

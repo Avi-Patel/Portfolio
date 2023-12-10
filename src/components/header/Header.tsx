@@ -4,11 +4,11 @@ import { Box } from "@sprinklrjs/spaceweb/box";
 import { BaseButton } from "@sprinklrjs/spaceweb/base-button";
 import { StatefulTooltip } from "@sprinklrjs/spaceweb/tooltip";
 
-import EmailCircleIcon from "@sprinklrjs/spaceweb-icons/brand/EmailCircle";
-import InstagramClrIcon from "@sprinklrjs/spaceweb-icons/brand/InstagramClr";
-import TwitterCircleIcon from "@sprinklrjs/spaceweb-icons/brand/TwitterCircle";
-import LinkedinCircleClrIcon from "@sprinklrjs/spaceweb-icons/brand/LinkedinCircleClr";
-import YoutubeCircleClrIcon from "@sprinklrjs/spaceweb-icons/brand/YoutubeCircleClr";
+import { ImMail4 } from "react-icons/im";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
+import { IoLogoYoutube } from "react-icons/io5";
 
 import { IconProps } from "@sprinklrjs/spaceweb/icon";
 import { ReactNode } from "react";
@@ -99,28 +99,31 @@ export const Header = () => {
         <QuickLinkButton
           link="mailto:patelavi8995@gmail.com"
           tooltip="e-mail"
-          Icon={EmailCircleIcon}
+          Icon={ImMail4}
           color="#EAB308"
         />
         <QuickLinkButton
           link="https://www.linkedin.com/in/avipatel11/"
           tooltip="LinkedIn"
-          Icon={LinkedinCircleClrIcon}
+          Icon={FaLinkedin}
+          color="#0082ca"
         />
         <QuickLinkButton
           link="https://www.instagram.com/_avipatel_/"
           tooltip="Instagram"
-          Icon={InstagramClrIcon}
+          Icon={FaInstagram}
+          color="#ac2bac"
         />
         <QuickLinkButton
           link="https://www.youtube.com/channel/UCF8IPjluRSaPJuJpr91kKZw"
           tooltip="Youtube"
-          Icon={YoutubeCircleClrIcon}
+          Icon={IoLogoYoutube}
+          color="#ed302f"
         />
         <QuickLinkButton
           link="https://twitter.com/AviPatel7383"
           tooltip="Twitter"
-          Icon={TwitterCircleIcon}
+          Icon={FaXTwitter}
           color="white"
         />
       </Box>

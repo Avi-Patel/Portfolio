@@ -2,8 +2,8 @@ import { Layout } from "../../components/layout";
 import { Box } from "@sprinklrjs/spaceweb/box";
 import { Typography } from "@sprinklrjs/spaceweb/typography";
 import { Button } from "@sprinklrjs/spaceweb/button";
-import BrandIcon from "@sprinklrjs/spaceweb-icons/solid/Brand";
-import ConnectorIcon from "@sprinklrjs/spaceweb-icons/solid/Connector";
+import { FaRegArrowAltCircleUp } from "react-icons/fa";
+import { TbBrandAdobe } from "react-icons/tb";
 
 import { getYears } from "../../utils/getYears";
 
@@ -71,7 +71,15 @@ const ExperienceCard = ({
           <Typography variant="h3" className="spr-text-05">
             {role}
           </Typography>
-          <BrandIcon size={14} className="mx-3" style={{ fill: yellowColor }} />
+          <TbBrandAdobe
+            style={{
+              fill: yellowColor,
+              height: 20,
+              width: 20,
+              marginLeft: "12px",
+              marginRight: "12px",
+            }}
+          />
           <Typography variant="h3" style={{ color: yellowColor }}>
             {company}
           </Typography>
@@ -101,7 +109,9 @@ const ExperienceCard = ({
 const ExperienceConnector = () => (
   <Box className="flex flex-col items-center w-full">
     <Box className="h-4 w-px" style={{ backgroundColor: yellowColor }} />
-    <ConnectorIcon size={14} style={{ fill: yellowColor }} />
+    <FaRegArrowAltCircleUp
+      style={{ fill: yellowColor, height: 14, width: 14 }}
+    />
     <Box className="h-4 w-px" style={{ backgroundColor: yellowColor }} />
   </Box>
 );
