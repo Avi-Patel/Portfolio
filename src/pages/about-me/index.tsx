@@ -95,8 +95,8 @@ export default function Home() {
 
             <Box className="flex flex-col items-center">
               <Typography variant="h4" className="spr-text-05 w-2/3">
-                I&apos;m <span style={{ color: yellowColor }}>Avi Patel</span>a
-                passionate <span style={{ color: yellowColor }}>Frontend</span>
+                I&apos;m <span style={{ color: yellowColor }}>Avi Patel</span> a
+                passionate <span style={{ color: yellowColor }}>Frontend</span>{" "}
                 developer. I&apos;ve been navigating the dynamic landscape of
                 frontend development for the past three years. In this exciting
                 journey, I&apos;ve had the pleasure of immersing myself in the
