@@ -6,6 +6,8 @@ import { Box } from "@sprinklrjs/spaceweb/box";
 import { Typography } from "@sprinklrjs/spaceweb/typography";
 import { Button } from "@sprinklrjs/spaceweb/button";
 
+import { useIsMobileDevice } from "@sprinklrjs/spaceweb/hooks/useIsMobileDevice";
+
 import { getYears } from "../utils/getYears";
 
 const TITLE = "I m Avi Patel";
@@ -27,18 +29,36 @@ const TechButton = ({ name }: { name: string }) => (
 );
 
 export default function Home() {
+  const isMobileDevice = useIsMobileDevice();
+
   return (
     <Layout title="Avi Patel">
-      <Box className="flex items-center w-2/3 h-full justify-evenly">
-        <Box className="flex flex-col flex-1 gap-2">
+      <Box
+        className={`flex ${
+          isMobileDevice ? "w-full px-8 flex-col" : "w-2/3"
+        } items-center h-full justify-evenly py-12 gap-12`}
+      >
+        <Box
+          className={`flex flex-col gap-2 ${
+            isMobileDevice ? "items-center" : "flex-1"
+          }`}
+        >
           <Typography variant="h4" weight="medium" style={{ color: "#EAB308" }}>
             Hello, Welcome
           </Typography>
-          <Typography variant="h1" weight="bold" className="spr-text-05 mt-4">
+          <Typography
+            variant={isMobileDevice ? "h2" : "h1"}
+            weight="bold"
+            className="spr-text-05 mt-4"
+          >
             {TITLE}
           </Typography>
           <Box className="flex items-center">
-            <Typography variant="h2" weight="semibold" className="spr-text-05">
+            <Typography
+              variant={isMobileDevice ? "h3" : "h2"}
+              weight="semibold"
+              className="spr-text-05"
+            >
               {SUB_TITLE}
             </Typography>
             <Link
@@ -48,7 +68,7 @@ export default function Home() {
               style={{ textDecorationLine: "none" }}
             >
               <Typography
-                variant="h2"
+                variant={isMobileDevice ? "h3" : "h2"}
                 weight="semibold"
                 className="spr-text-05"
               >
@@ -64,7 +84,11 @@ export default function Home() {
             {intro}
           </Typography>
 
-          <Box className="flex gap-4 mt-4">
+          <Box
+            className={`flex flex-wrap gap-4 mt-4 ${
+              isMobileDevice ? "justify-center" : "justify-start"
+            }`}
+          >
             <TechButton name="ReactJs" />
             <TechButton name="NextJs" />
             <TechButton name="Typescript" />
@@ -72,11 +96,11 @@ export default function Home() {
           </Box>
         </Box>
 
-        <Box className="overflow-hidden flex- 1 rounded-8">
+        <Box className="overflow-hidden flex-1 rounded-8">
           <Image
             src="/Avi-Photo.jpeg"
-            width={400}
-            height={550}
+            width={isMobileDevice ? 250 : 400}
+            height={isMobileDevice ? 320 : 550}
             alt="Picture of the author"
             style={{ borderRadius: "8px" }}
           />

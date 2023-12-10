@@ -5,6 +5,8 @@ import { Button } from "@sprinklrjs/spaceweb/button";
 import { FaRegArrowAltCircleUp } from "react-icons/fa";
 import { TbBrandAdobe } from "react-icons/tb";
 
+import { useIsMobileDevice } from "@sprinklrjs/spaceweb/hooks/useIsMobileDevice";
+
 import { getYears } from "../../utils/getYears";
 
 const yellowColor = "#EAB308";
@@ -55,56 +57,94 @@ const ExperienceCard = ({
   years: string;
   majorProjects: string[];
   isCurrent?: boolean;
-}) => (
-  <Box
-    className="px-6 py-4 rounded-12 w-full"
-    style={{
-      backgroundColor: "#020617",
-      ":hover": {
-        boxShadow: "0px 0px 4px rgba(201, 201, 201, 0.5)",
-      },
-    }}
-  >
-    <Box className="flex flex-col gap-4">
-      <Box className="flex items-center justify-between">
-        <Box className="flex items-center">
-          <Typography variant="h3" className="spr-text-05">
-            {role}
+}) => {
+  const isMobileDevice = useIsMobileDevice();
+
+  return (
+    <Box
+      className="px-6 py-4 rounded-12 w-full"
+      style={{
+        backgroundColor: "#020617",
+        ":hover": {
+          boxShadow: "0px 0px 4px rgba(201, 201, 201, 0.5)",
+        },
+      }}
+    >
+      <Box className="flex flex-col gap-4">
+        {!isMobileDevice ? (
+          <Box className="flex items-center justify-between gap-4">
+            <Box className="flex items-start">
+              <Typography variant="h3" className="spr-text-05">
+                {role}
+              </Typography>
+              <TbBrandAdobe
+                style={{
+                  fill: yellowColor,
+                  height: 20,
+                  width: 20,
+                  marginLeft: "12px",
+                  marginRight: "12px",
+                }}
+              />
+              <Typography variant="h3" style={{ color: yellowColor }}>
+                {company}
+              </Typography>
+            </Box>
+
+            <Typography
+              variant="bs1"
+              className="spr-text-05"
+              style={{ color: "#AEAEB2" }}
+            >
+              {`${years} years ${isCurrent ? " - Present" : ""}`}
+            </Typography>
+          </Box>
+        ) : (
+          <Box className="w-full flex flex-col items-start justify-between gap-4">
+            <Box className="w-full flex items-center">
+              <TbBrandAdobe
+                style={{
+                  fill: yellowColor,
+                  height: 20,
+                  width: 20,
+                  marginRight: "12px",
+                }}
+              />
+              <Typography
+                variant="h3"
+                style={{ color: yellowColor }}
+                className="flex-1"
+              >
+                {company}
+              </Typography>
+              <Typography
+                variant="bs1"
+                className="spr-text-05"
+                style={{ color: "#AEAEB2" }}
+              >
+                {`${years} years ${isCurrent ? " - Present" : ""}`}
+              </Typography>
+            </Box>
+
+            <Typography variant="h3" className="spr-text-05">
+              {role}
+            </Typography>
+          </Box>
+        )}
+        <Box className="flex items-start">
+          <Typography variant="h6" weight="medium" className="spr-text-05 mr-4">
+            Projects
           </Typography>
-          <TbBrandAdobe
-            style={{
-              fill: yellowColor,
-              height: 20,
-              width: 20,
-              marginLeft: "12px",
-              marginRight: "12px",
-            }}
-          />
-          <Typography variant="h3" style={{ color: yellowColor }}>
-            {company}
-          </Typography>
-        </Box>
-        <Typography
-          variant="bs1"
-          className="spr-text-05"
-          style={{ color: "#AEAEB2" }}
-        >
-          {`${years} years ${isCurrent ? " - Present" : ""}`}
-        </Typography>
-      </Box>
-      <Box className="flex items-start">
-        <Typography variant="h6" weight="medium" className="spr-text-05 mr-4">
-          Projects
-        </Typography>
-        <Box className="flex items-center flex-wrap justify-start gap-x-4 gap-y-2">
-          {majorProjects.map((project) => (
-            <TitleButton key={project} name={project} />
-          ))}
+          <Box className="flex items-center flex-wrap justify-start gap-x-4 gap-y-2">
+            {majorProjects.map((project) => (
+              <TitleButton key={project} name={project} />
+            ))}
+          </Box>
         </Box>
       </Box>
     </Box>
-  </Box>
-);
+  );
+};
 
 const ExperienceConnector = () => (
   <Box className="flex flex-col items-center w-full">
@@ -117,11 +157,21 @@ const ExperienceConnector = () => (
 );
 
 export default function Home() {
+  const isMobileDevice = useIsMobileDevice();
+
   return (
     <Layout title="My Experience">
-      <Box className="flex flex-col items-start w-2/3 py-12">
+      <Box
+        className={`flex flex-col items-start ${
+          isMobileDevice ? "w-full p-8" : "w-2/3 py-12"
+        }`}
+      >
         <Box className="flex flex-col items-center w-full gap-12">
-          <Box className="flex flex-col items-start gap-8 w-2/3">
+          <Box
+            className={`flex flex-col items-start gap-8 ${
+              isMobileDevice ? "w-full" : "w-2/3"
+            }`}
+          >
             <Title title="My Experiences" />
             <Box className="flex flex-col items-start">
               <ExperienceCard

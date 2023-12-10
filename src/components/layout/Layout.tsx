@@ -3,8 +3,10 @@ import Head from "next/head";
 
 import { Box } from "@sprinklrjs/spaceweb/box";
 import { Header } from "../header";
+import { SocialMediaLinks } from "../SocialMediaLinks";
 
 import { useStickyElement } from "../../hooks/useStickyElement";
+import { useIsMobileDevice } from "@sprinklrjs/spaceweb/hooks/useIsMobileDevice";
 
 import { styled } from "@sprinklrjs/spaceweb/style";
 
@@ -18,6 +20,7 @@ export const Layout = ({
   children?: ReactNode;
 }) => {
   const { isSticky, setStickySentinelRef } = useStickyElement();
+  const isMobileDevice = useIsMobileDevice();
 
   return (
     <Box className="z-0 spr-text-01 spr-ui-01">
@@ -47,6 +50,14 @@ export const Layout = ({
         <StyledBody className="w-full flex justify-center flex-1">
           {children}
         </StyledBody>
+        {isMobileDevice ? (
+          <Box
+            className="flex items-center justify-center px-6 py-4"
+            style={{ backgroundColor: "#020617" }}
+          >
+            <SocialMediaLinks />
+          </Box>
+        ) : null}
       </Box>
     </Box>
   );

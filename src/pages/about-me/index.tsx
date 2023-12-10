@@ -4,6 +4,9 @@ import { Layout } from "../../components/layout";
 import { Box } from "@sprinklrjs/spaceweb/box";
 import { Typography } from "@sprinklrjs/spaceweb/typography";
 import { Button } from "@sprinklrjs/spaceweb/button";
+
+import { useIsMobileDevice } from "@sprinklrjs/spaceweb/hooks/useIsMobileDevice";
+
 import { RiGraduationCapFill } from "react-icons/ri";
 
 const yellowColor = "#EAB308";
@@ -86,15 +89,28 @@ const QuickLink = ({ name, link }: { name: string; link: string }) => (
 );
 
 export default function Home() {
+  const isMobileDevice = useIsMobileDevice();
+
   return (
     <Layout title="About Me">
-      <Box className="flex flex-col items-start w-14/24 py-32">
-        <Box className="flex flex-col items-center w-full gap-32">
+      <Box
+        className={`flex flex-col items-start ${
+          isMobileDevice ? "w-full p-8" : "w-14/24 py-32"
+        }`}
+      >
+        <Box
+          className={`flex flex-col items-center w-full ${
+            isMobileDevice ? "gap-12" : "gap-32"
+          }`}
+        >
           <Box className="w-full flex flex-col items-start gap-8">
             <Title title="Quick" subTitle=" Intro" />
 
             <Box className="flex flex-col items-center">
-              <Typography variant="h4" className="spr-text-05 w-2/3">
+              <Typography
+                variant="h4"
+                className={`spr-text-05 ${isMobileDevice ? "w-full" : "w-2/3"}`}
+              >
                 I&apos;m <span style={{ color: yellowColor }}>Avi Patel</span> a
                 passionate <span style={{ color: yellowColor }}>Frontend</span>{" "}
                 developer. I&apos;ve been navigating the dynamic landscape of
@@ -104,7 +120,12 @@ export default function Home() {
                 experiences to life.
               </Typography>
 
-              <Typography variant="h4" className="spr-text-05 mt-6 w-2/3">
+              <Typography
+                variant="h4"
+                className={`spr-text-05 mt-6 ${
+                  isMobileDevice ? "w-full" : "w-2/3"
+                }`}
+              >
                 Over this period, I&apos;ve been immersed in the ever-evolving
                 world of frontend technologies, honing my skills in{" "}
                 <span style={{ color: yellowColor }}>Javascript</span>,{" "}
@@ -116,7 +137,12 @@ export default function Home() {
                 where I&apos;ve not only mastered the fundamentals but also kept
                 pace with the latest trends and technologies...
               </Typography>
-              <Typography variant="h4" className="spr-text-05 mt-6 w-2/3">
+              <Typography
+                variant="h4"
+                className={`spr-text-05 mt-6 ${
+                  isMobileDevice ? "w-full" : "w-2/3"
+                }`}
+              >
                 My journey has equipped me with a keen eye for detail, a deep
                 understanding of responsive design, and the ability to
                 collaborate seamlessly with cross-functional teams. Whether
@@ -124,7 +150,12 @@ export default function Home() {
                 performance, or ensuring an exceptional user interface.
               </Typography>
 
-              <Typography variant="h4" className="spr-text-05 mt-6 w-2/3">
+              <Typography
+                variant="h4"
+                className={`spr-text-05 mt-6 ${
+                  isMobileDevice ? "w-full" : "w-2/3"
+                }`}
+              >
                 Apart from professional side,I learn finance and investment
                 fundamentals. I like to track companies Financial Performances
                 and filters out goog stocks for investment. I actively invest in
@@ -135,9 +166,15 @@ export default function Home() {
 
           <Box className="w-full flex flex-col items-start gap-8">
             <Title title="Skills" />
-            <Box className="flex justify-center items-center gap-12">
+            <Box
+              className={`flex justify-center items-center gap-12 ${
+                isMobileDevice ? "flex-col" : ""
+              }`}
+            >
               <Box
-                className="p-6 gap-4 w-1/3 flex flex-col items-center rounded-12"
+                className={`p-6 gap-4 flex flex-col items-center rounded-12 ${
+                  isMobileDevice ? "w-full" : "w-1/3"
+                }`}
                 style={{
                   backgroundColor: "#020617",
                   ":hover": {
@@ -156,7 +193,9 @@ export default function Home() {
                 </Box>
               </Box>
               <Box
-                className="p-6 gap-4 w-1/3 flex flex-col items-center rounded-12"
+                className={`p-6 gap-4 flex flex-col items-center rounded-12 ${
+                  isMobileDevice ? "w-full" : "w-1/3"
+                }`}
                 style={{
                   backgroundColor: "#020617",
                   ":hover": {
@@ -185,7 +224,9 @@ export default function Home() {
                 </Box>
               </Box>
               <Box
-                className="p-6 gap-4 w-1/3 flex flex-col items-center rounded-12"
+                className={`p-6 gap-4 flex flex-col items-center rounded-12 ${
+                  isMobileDevice ? "w-full" : "w-1/3"
+                }`}
                 style={{
                   backgroundColor: "#020617",
                   ":hover": {
@@ -209,7 +250,7 @@ export default function Home() {
           <Box className="w-full flex flex-col items-start gap-8">
             <Title title="Quick" subTitle=" Links" />
 
-            <Box className="w-full flex items-center justify-center gap-4">
+            <Box className="w-full flex flex-wrap items-center justify-center gap-4">
               <QuickLink link="https://github.com/Avi-Patel" name="Github" />
               <QuickLink
                 link="https://www.linkedin.com/in/avi-patel-3122b115a"
@@ -283,7 +324,7 @@ export default function Home() {
           <Box className="w-full flex flex-col items-start gap-8">
             <Title title="My" subTitle="Hobbies & Interests" />
 
-            <Box className="w-full flex items-center justify-center gap-4">
+            <Box className="w-full flex flex-wrap items-center justify-center gap-4">
               <DecoratedButton name="Competitive Programming" />
               <DecoratedButton name="Cricket" />
               <DecoratedButton name="Music" />
