@@ -115,9 +115,7 @@ export default function Home() {
                 passionate <span style={{ color: yellowColor }}>Frontend</span>{" "}
                 developer. I&apos;ve been navigating the dynamic landscape of
                 frontend development for the past three years. In this exciting
-                journey, I&apos;ve had the pleasure of immersing myself in the
-                intricate dance between code and design, bringing digital
-                experiences to life.
+                journey.
               </Typography>
 
               <Typography
@@ -137,18 +135,6 @@ export default function Home() {
                 where I&apos;ve not only mastered the fundamentals but also kept
                 pace with the latest trends and technologies...
               </Typography>
-              <Typography
-                variant="h4"
-                className={`spr-text-05 mt-6 ${
-                  isMobileDevice ? "w-full" : "w-2/3"
-                }`}
-              >
-                My journey has equipped me with a keen eye for detail, a deep
-                understanding of responsive design, and the ability to
-                collaborate seamlessly with cross-functional teams. Whether
-                it&apos;s implementing cutting-edge frameworks, optimizing
-                performance, or ensuring an exceptional user interface.
-              </Typography>
 
               <Typography
                 variant="h4"
@@ -158,8 +144,8 @@ export default function Home() {
               >
                 Apart from professional side,I learn finance and investment
                 fundamentals. I like to track companies Financial Performances
-                and filters out goog stocks for investment. I actively invest in
-                equities.
+                and filters out fundamentally strong stocks for investment. I
+                actively invest in equities.
               </Typography>
             </Box>
           </Box>
@@ -217,10 +203,6 @@ export default function Home() {
                   <TitleButton name="MJML" />
                   <TitleButton name="Apache Velocity" />
                   <TitleButton name="React-i18Next" />
-                  <TitleButton name="Git" />
-                  <TitleButton name="Github" />
-                  <TitleButton name="Gitlab" />
-                  <TitleButton name="Jira" />
                 </Box>
               </Box>
               <Box
@@ -235,13 +217,16 @@ export default function Home() {
                 }}
               >
                 <Typography variant="h5" className="spr-text-05">
-                  Areas Of Interest
+                  Tools i use frequently
                 </Typography>
                 <Box className="flex flex-wrap justify-center gap-x-4 gap-y-2">
-                  <TitleButton name="Data Structures & Algorithms" />
-                  <TitleButton name="OOPs" />
-                  <TitleButton name="Software Engineering" />
-                  <TitleButton name="Front-end Development" />
+                  <TitleButton name="Git" />
+                  <TitleButton name="Github" />
+                  <TitleButton name="Gitlab" />
+                  <TitleButton name="VS Code" />
+                  <TitleButton name="Jira" />
+                  <TitleButton name="Figma" />
+                  <TitleButton name="Storybook" />
                 </Box>
               </Box>
             </Box>
@@ -314,7 +299,7 @@ export default function Home() {
                     className="spr-text-05"
                     style={{ color: "#AEAEB2" }}
                   >
-                    2017-2018
+                    2017-2021
                   </Typography>
                 </Box>
               </Box>
