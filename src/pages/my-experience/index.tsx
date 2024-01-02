@@ -177,7 +177,7 @@ export default function Home() {
               <ExperienceCard
                 role="Product Engineer"
                 company="Sprinklr"
-                years={`${getYears("01 Jan 2021")}`}
+                years={`${getYears("07 June 2021")}`}
                 majorProjects={[
                   "Research App",
                   "Assets Manager",

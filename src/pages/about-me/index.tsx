@@ -114,8 +114,7 @@ export default function Home() {
                 I&apos;m <span style={{ color: yellowColor }}>Avi Patel</span> a
                 passionate <span style={{ color: yellowColor }}>Frontend</span>{" "}
                 developer. I&apos;ve been navigating the dynamic landscape of
-                frontend development for the past three years. In this exciting
-                journey.
+                frontend development for the past several years.
               </Typography>
 
               <Typography
@@ -145,7 +144,10 @@ export default function Home() {
                 Apart from professional side,I learn finance and investment
                 fundamentals. I like to track companies Financial Performances
                 and filters out fundamentally strong stocks for investment. I
-                actively invest in equities.
+                actively invest in equities. You can find my equity portfolio{" "}
+                <Link href="https://docs.google.com/spreadsheets/d/1WY3d50JvLvVEtyOLNDvjrA7D7dzWpJ3yDj4ogW4Hp4U/edit#gid=0">
+                  here.
+                </Link>
               </Typography>
             </Box>
           </Box>
