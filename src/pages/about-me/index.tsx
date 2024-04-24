@@ -9,7 +9,7 @@ import { useIsMobileDevice } from "@sprinklrjs/spaceweb/hooks/useIsMobileDevice"
 
 import { RiGraduationCapFill } from "react-icons/ri";
 
-const yellowColor = "#EAB308";
+import { yellowColor } from "../../constants/colors";
 
 const Title = ({ title, subTitle }: { title: string; subTitle?: string }) => (
   <Box className="flex items-center gap-2">
