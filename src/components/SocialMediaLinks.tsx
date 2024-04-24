@@ -1,19 +1,14 @@
 import { Box } from "@sprinklrjs/spaceweb/box";
 import { BaseButton } from "@sprinklrjs/spaceweb/base-button";
-import { IconButton } from "@sprinklrjs/spaceweb/button";
 import { StatefulTooltip } from "@sprinklrjs/spaceweb/tooltip";
-
-import { useIsMobileDevice } from "@sprinklrjs/spaceweb/hooks/useIsMobileDevice";
 
 import { ImMail4 } from "react-icons/im";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoYoutube } from "react-icons/io5";
-import { IoReorderThree } from "react-icons/io5";
 
-import { IconProps } from "@sprinklrjs/spaceweb/icon";
-import { ReactNode } from "react";
+import { IconType } from "react-icons";
 
 const QuickLinkButton = ({
   link,
@@ -24,7 +19,7 @@ const QuickLinkButton = ({
   link: string;
   tooltip: string;
   color?: string;
-  Icon: (props: IconProps) => ReactNode;
+  Icon: IconType;
 }) => (
   <StatefulTooltip content={tooltip}>
     <a href={link} rel="noopener noreferrer" target="_blank">
