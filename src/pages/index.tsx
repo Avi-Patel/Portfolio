@@ -10,8 +10,10 @@ import { useIsMobileDevice } from "@sprinklrjs/spaceweb/hooks/useIsMobileDevice"
 
 import { getYears } from "../utils/getYears";
 
-const TITLE = "I m Avi Patel";
-const SUB_TITLE = "I'm a Product Engineer @";
+import { yellowColor } from "@/constants/colors";
+
+const TITLE = "I'm Avi Patel";
+const SUB_TITLE = "Product Engineer @";
 
 const expInYears = getYears("01 Jan 2021");
 const intro = `I work as a Frontend Developer. With over ${expInYears} Years of experience, my
@@ -71,6 +73,7 @@ export default function Home() {
                 variant={isMobileDevice ? "h3" : "h2"}
                 weight="semibold"
                 className="spr-text-05"
+                style={{ color: yellowColor }}
               >
                 Sprinklr
               </Typography>

@@ -59,7 +59,7 @@ export const Header = ({
           }}
         />
         <Typography
-          variant="h3"
+          variant="h5"
           style={{ color: yellowColor }}
           className="flex-1"
         >
@@ -74,7 +74,7 @@ export const Header = ({
         </Typography>
       </Box>
 
-      <Typography variant="h3" className="spr-text-05">
+      <Typography variant="h5" className="spr-text-05">
         {role}
       </Typography>
     </Box>

@@ -11,17 +11,6 @@ import { useIsMobileDevice } from "@sprinklrjs/spaceweb/hooks/useIsMobileDevice"
 import { yellowColor } from "@/constants/colors";
 import { experiences } from "@/constants/experience";
 
-const Title = ({ title, subTitle }: { title: string; subTitle?: string }) => (
-  <Box className="flex items-center gap-2">
-    <Typography variant="h2" style={{ color: yellowColor }}>
-      {title}
-    </Typography>
-    <Typography variant="h2" className="spr-text-05">
-      {subTitle}
-    </Typography>
-  </Box>
-);
-
 const ExperienceConnector = () => (
   <Box className="flex flex-col items-center w-full">
     <Box className="h-4 w-px" style={{ backgroundColor: yellowColor }} />
@@ -48,7 +37,12 @@ export default function Home() {
               isMobileDevice ? "w-full" : "w-2/3"
             }`}
           >
-            <Title title="My Experiences" />
+            <Typography
+              variant={isMobileDevice ? "h3" : "h2"}
+              style={{ color: yellowColor }}
+            >
+              My Experiences
+            </Typography>
             <Box className="flex flex-col items-start">
               {experiences.map((experience) => (
                 <Fragment key={experience.role}>

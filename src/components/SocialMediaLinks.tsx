@@ -4,7 +4,6 @@ import { StatefulTooltip } from "@sprinklrjs/spaceweb/tooltip";
 
 import { ImMail4 } from "react-icons/im";
 import { FaLinkedin } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoYoutube } from "react-icons/io5";
 
@@ -43,12 +42,6 @@ export const SocialMediaLinks = () => (
       tooltip="LinkedIn"
       Icon={FaLinkedin}
       color="#0082ca"
-    />
-    <QuickLinkButton
-      link="https://www.instagram.com/_avipatel_/"
-      tooltip="Instagram"
-      Icon={FaInstagram}
-      color="#ac2bac"
     />
     <QuickLinkButton
       link="https://www.youtube.com/channel/UCF8IPjluRSaPJuJpr91kKZw"
