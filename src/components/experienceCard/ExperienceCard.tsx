@@ -45,7 +45,6 @@ export const ExperienceCard = ({ experience }: { experience: Experience }) => {
               key={project.id}
               name={project.project}
               selected={selectedProject?.id === project.id}
-              hasDescription={!!project.description?.length}
               onClick={
                 !!project.description?.length
                   ? () =>

@@ -30,7 +30,7 @@ const QuickLink = ({
     rel="noopener noreferrer"
     style={{ textDecorationLine: "none" }}
   >
-    <ItemButton name={name} className={className} />
+    <ItemButton name={name} className={className} onClick={() => null} />
   </Link>
 );
 

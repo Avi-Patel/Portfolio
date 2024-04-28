@@ -25,13 +25,11 @@ const DEFAULT_STYLE = {
 export const ItemButton = ({
   name,
   selected,
-  hasDescription,
   className,
   onClick,
 }: {
   name: string;
   selected?: boolean;
-  hasDescription?: boolean;
   className?: string;
   onClick?: () => void;
 }) => {
@@ -48,8 +46,8 @@ export const ItemButton = ({
       style={{
         cursor: onClick ? "pointer" : "default",
         ...(selected ? HOVER_STYLE : DEFAULT_STYLE),
-        ":hover": hasDescription ? HOVER_STYLE : DEFAULT_STYLE,
-        ":active": hasDescription ? HOVER_STYLE : DEFAULT_STYLE,
+        ":hover": HOVER_STYLE,
+        ":active": HOVER_STYLE,
       }}
     >
       {name}

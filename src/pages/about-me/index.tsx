@@ -37,11 +37,6 @@ const QuickLink = ({
 export default function Home() {
   const isMobileDevice = useIsMobileDevice();
 
-  const largeButtonClassName = useMemo(
-    () => (isMobileDevice ? "font-500 py-2 px-3" : "font-600 py-3 px-4"),
-    [isMobileDevice]
-  );
-
   return (
     <Layout title="About Me">
       <Box
