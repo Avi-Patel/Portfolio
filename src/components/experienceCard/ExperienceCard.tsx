@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Box } from "@sprinklrjs/spaceweb/box";
 import { Typography } from "@sprinklrjs/spaceweb/typography";
-import { ProjectButton } from "./components/ProjectButton";
+import { ItemButton } from "../ItemButton";
 import { Header } from "./components/Header";
 
 import { useIsMobileDevice } from "@sprinklrjs/spaceweb/hooks/useIsMobileDevice";
@@ -41,7 +41,7 @@ export const ExperienceCard = ({ experience }: { experience: Experience }) => {
         </Typography>
         <Box className="flex items-center flex-wrap justify-start gap-2">
           {majorProjects.map((project) => (
-            <ProjectButton
+            <ItemButton
               key={project.id}
               name={project.project}
               selected={selectedProject?.id === project.id}

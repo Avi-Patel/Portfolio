@@ -3,17 +3,17 @@ import { useMemo } from "react";
 import Link from "next/link";
 
 import { Box } from "@sprinklrjs/spaceweb/box";
-import { Typography } from "@sprinklrjs/spaceweb/typography";
-import { Layout } from "@/components/layout";
-import { SectionTitle } from "@/components/aboutMe/components/SectionTitle";
 import { ItemButton } from "@/components/ItemButton";
-import { AboutMe } from "@/components/aboutMe";
 
 import { useIsMobileDevice } from "@sprinklrjs/spaceweb/hooks/useIsMobileDevice";
 
-import { RiGraduationCapFill } from "react-icons/ri";
-
-import { yellowColor } from "@/constants/colors";
+const LINKS = [
+  { name: "Github", link: "https://github.com/Avi-Patel" },
+  { name: "LinkedIn", link: "https://www.linkedin.com/in/avi-patel-3122b115a" },
+  { name: "Codeforces", link: "https://codeforces.com/profile/Joker_11" },
+  { name: "Codechef", link: "https://www.codechef.com/users/apatel_123" },
+  { name: "Hackerrank", link: "https://www.hackerrank.com/G_A_L_A_X_Y" },
+];
 
 const QuickLink = ({
   name,
@@ -34,7 +34,7 @@ const QuickLink = ({
   </Link>
 );
 
-export default function Home() {
+export const QuickLinks = () => {
   const isMobileDevice = useIsMobileDevice();
 
   const largeButtonClassName = useMemo(
@@ -43,14 +43,10 @@ export default function Home() {
   );
 
   return (
-    <Layout title="About Me">
-      <Box
-        className={`flex flex-col items-start ${
-          isMobileDevice ? "w-full p-8" : "w-14/24 py-32"
-        }`}
-      >
-        <AboutMe />
-      </Box>
-    </Layout>
+    <Box className="w-full flex flex-wrap items-center justify-center gap-4">
+      {LINKS.map((link) => (
+        <QuickLink key={link.name} {...link} className={largeButtonClassName} />
+      ))}
+    </Box>
   );
-}
+};

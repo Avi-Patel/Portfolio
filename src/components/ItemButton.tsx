@@ -2,7 +2,9 @@ import { Button } from "@sprinklrjs/spaceweb/button";
 
 import { useIsMobileDevice } from "@sprinklrjs/spaceweb/hooks/useIsMobileDevice";
 
-import { yellowColor } from "../../../constants/colors";
+import { yellowColor } from "@/constants/colors";
+
+import { ClassName } from "@sprinklrjs/spaceweb";
 
 const HOVER_STYLE = {
   borderLeftColor: yellowColor,
@@ -20,15 +22,17 @@ const DEFAULT_STYLE = {
   backgroundColor: "transparent",
 };
 
-export const ProjectButton = ({
+export const ItemButton = ({
   name,
   selected,
   hasDescription,
+  className,
   onClick,
 }: {
   name: string;
-  selected: boolean;
-  hasDescription: boolean;
+  selected?: boolean;
+  hasDescription?: boolean;
+  className?: string;
   onClick?: () => void;
 }) => {
   const isMobileDevice = useIsMobileDevice();
@@ -38,7 +42,9 @@ export const ProjectButton = ({
       onClick={onClick}
       variant="primary"
       size={isMobileDevice ? "xxxs" : "xs"}
-      className="font-500 spr-text-05 border-1 border-solid"
+      className={`py-2 px-3 font-500 rounded-12 spr-text-05 border-1 border-solid ${
+        isMobileDevice ? "rounded-8" : "rounded-12"
+      } ${className ?? ""}`}
       style={{
         cursor: onClick ? "pointer" : "default",
         ...(selected ? HOVER_STYLE : DEFAULT_STYLE),
