@@ -4,9 +4,25 @@ import { Experience } from "@/components/experienceCard/types";
 
 export const experiences: Experience[] = [
   {
+    role: "Senior Product Engineer",
+    company: "Sprinklr",
+    years: `${getYears("01 June 2024")}`,
+    majorProjects: [
+      {
+        id: "SURVEYS",
+        project: "Surveys",
+        description: [
+          "I was a part of a very big project which taught me lot of things. Surveys app is basically a app which allows you to create surveys and distribute them.",
+          "I added major features from scratch like MCQ with images question and many other questions, Translation builder, Conversational Survey, Survey using AI, Distributions, Respondent view of the survey, Controlling Logics and many more.",
+        ],
+      },
+    ],
+    isCurrent: true,
+  },
+  {
     role: "Product Engineer",
     company: "Sprinklr",
-    years: `${getYears("07 June 2021")}`,
+    years: "3",
     majorProjects: [
       {
         id: "CXM",
@@ -61,7 +77,7 @@ export const experiences: Experience[] = [
         description: [],
       },
     ],
-    isCurrent: true,
+    isCurrent: false,
   },
   {
     role: "Product Engineering Intern",
