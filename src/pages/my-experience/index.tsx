@@ -44,9 +44,9 @@ export default function Home() {
               My Experiences
             </Typography>
             <Box className="flex flex-col items-start">
-              {experiences.map((experience) => (
+              {experiences.map((experience, index) => (
                 <Fragment key={experience.role}>
-                  {experience.isCurrent ? null : <ExperienceConnector />}
+                  {index === 0 ? null : <ExperienceConnector />}
                   <ExperienceCard experience={experience} />
                 </Fragment>
               ))}

@@ -1,7 +1,7 @@
 export const SKILLS = [
   {
     title: "Languages",
-    skills: ["Javascript", "C++", "HTML", "Dart"],
+    skills: ["Javascript", "C++", "HTML", "MJML"],
   },
   {
     title: "Technologies",
@@ -13,7 +13,6 @@ export const SKILLS = [
       "Apollo GraphQL",
       "Webpack",
       "Jest",
-      "MJML",
     ],
   },
   {

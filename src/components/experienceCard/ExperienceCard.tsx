@@ -6,12 +6,36 @@ import { ItemButton } from "../ItemButton";
 import { Header } from "./components/Header";
 
 import { useIsMobileDevice } from "@sprinklrjs/spaceweb/hooks/useIsMobileDevice";
+import { useStyle } from "@sprinklrjs/spaceweb/style";
 
 import { Experience, Project } from "./types";
 
+const ListItem = ({ sentence }: { sentence: string }) => {
+  const isMobileDevice = useIsMobileDevice();
+  const { theme } = useStyle();
+
+  return (
+    <Box className="flex items-start justify-start gap-2">
+      <Box className="flex-none flex items-center" style={{ height: "1.8rem" }}>
+        <Box
+          className="w-1 h-1 rounded-full"
+          style={{ backgroundColor: theme.spr.text05 }}
+        />
+      </Box>
+      <Typography
+        variant={isMobileDevice ? "body-12" : "body-14"}
+        className="spr-text-05"
+      >
+        {sentence}
+      </Typography>
+    </Box>
+  );
+};
+
 export const ExperienceCard = ({ experience }: { experience: Experience }) => {
   const [selectedProject, setSelectedProject] = useState<Project | undefined>();
-  const { role, company, years, majorProjects, isCurrent } = experience;
+  const { role, company, duration, from, to, majorProjects, others, skills } =
+    experience;
 
   const isMobileDevice = useIsMobileDevice();
 
@@ -28,46 +52,76 @@ export const ExperienceCard = ({ experience }: { experience: Experience }) => {
       <Header
         role={role}
         company={company}
-        years={years}
-        isCurrent={isCurrent}
+        from={from}
+        to={to}
+        duration={duration}
       />
-      <Box className="flex items-start gap-4">
-        <Typography
-          variant={isMobileDevice ? "h6" : "h5"}
-          weight="medium"
-          className="spr-text-05"
-        >
-          Projects
-        </Typography>
-        <Box className="flex items-center flex-wrap justify-start gap-2">
-          {majorProjects.map((project) => (
-            <ItemButton
-              key={project.id}
-              name={project.project}
-              selected={selectedProject?.id === project.id}
-              onClick={
-                !!project.description?.length
-                  ? () =>
-                      setSelectedProject((prev) =>
-                        prev?.id === project.id ? undefined : project
-                      )
-                  : undefined
-              }
-            />
+      <Box className="flex flex-col gap-6">
+        <Box className="flex flex-col gap-4">
+          <Box className="flex items-start gap-4">
+            <Typography
+              variant={isMobileDevice ? "h6" : "h5"}
+              weight="medium"
+              className="spr-text-05 mt-1"
+            >
+              Projects
+            </Typography>
+            <Box className="flex items-center flex-wrap justify-start gap-2">
+              {majorProjects.map((project) => (
+                <ItemButton
+                  key={project.id}
+                  name={project.project}
+                  selected={selectedProject?.id === project.id}
+                  onClick={
+                    !!project.description?.length
+                      ? () =>
+                          setSelectedProject((prev) =>
+                            prev?.id === project.id ? undefined : project
+                          )
+                      : undefined
+                  }
+                />
+              ))}
+            </Box>
+          </Box>
+
+          {selectedProject?.description?.map((sentence, index) => (
+            <ListItem key={index} sentence={sentence} />
           ))}
         </Box>
-      </Box>
 
-      <Box className="flex flex-col gap-4">
-        {selectedProject?.description?.map((sentence, index) => (
-          <Typography
-            key={index}
-            variant={isMobileDevice ? "body-12" : "body-14"}
-            className="spr-text-05"
-          >
-            {sentence}
-          </Typography>
-        ))}
+        {others?.length ? (
+          <Box className="flex flex-col gap-4">
+            <Typography
+              variant={isMobileDevice ? "h6" : "h5"}
+              weight="medium"
+              className="spr-text-05 mt-1"
+            >
+              Other
+            </Typography>
+
+            {others?.map((sentence, index) => (
+              <ListItem key={index} sentence={sentence} />
+            ))}
+          </Box>
+        ) : null}
+
+        {skills?.length ? (
+          <Box className="flex items-start gap-4">
+            <Typography
+              variant={isMobileDevice ? "h6" : "h5"}
+              weight="medium"
+              className="spr-text-05 mt-1"
+            >
+              Skills
+            </Typography>
+            <Box className="flex items-center flex-wrap justify-start gap-2">
+              {skills.map((skill) => (
+                <ItemButton key={skill} name={skill} />
+              ))}
+            </Box>
+          </Box>
+        ) : null}
       </Box>
     </Box>
   );

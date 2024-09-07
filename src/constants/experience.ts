@@ -1,4 +1,4 @@
-import { getYears } from "@/utils/getYears";
+import { getDurationString } from "@/utils/getYears";
 
 import { Experience } from "@/components/experienceCard/types";
 
@@ -6,23 +6,45 @@ export const experiences: Experience[] = [
   {
     role: "Senior Product Engineer",
     company: "Sprinklr",
-    years: `${getYears("01 June 2024")}`,
+    duration: getDurationString("01 June 2024"),
+    from: "June 2024",
+    to: "Present",
     majorProjects: [
       {
         id: "SURVEYS",
-        project: "Surveys",
+        project: "CFM-App",
         description: [
-          "I was a part of a very big project which taught me lot of things. Surveys app is basically a app which allows you to create surveys and distribute them.",
-          "I added major features from scratch like MCQ with images question and many other questions, Translation builder, Conversational Survey, Survey using AI, Distributions, Respondent view of the survey, Controlling Logics and many more.",
+          "Developed and successfully launched Customer Feedback Management App",
+          "Collaboration & Product Reach - Collaborated with Mobile and Backend team to add In-App, Website and conversational survey distributions.",
+        ],
+      },
+      {
+        id: "CHANNEL_TEMPLATES",
+        project: "Channel Templates Migration",
+        description: [
+          "Code Sharing - Migrated a channel templates repository into the Mono-Repo.",
+        ],
+      },
+      {
+        id: "LEARNING",
+        project: "Channel Templates Migration",
+        description: [
+          "Code Sharing - Migrated a channel templates repository into the Mono-Repo.",
         ],
       },
     ],
-    isCurrent: true,
+    others: [
+      "Acquired foundational knowledge in Jenkins, Docker and Kubernetes.",
+      "Reviewed pull requests and mentored new joiners.",
+    ],
+    skills: ["ReactJs", "NextJs", "Typescript", "Webpack", "GraphQL", "Jest"],
   },
   {
     role: "Product Engineer",
     company: "Sprinklr",
-    years: "3",
+    duration: "3 years",
+    from: "June 2021",
+    to: "June 2024",
     majorProjects: [
       {
         id: "CXM",
@@ -39,7 +61,6 @@ export const experiences: Experience[] = [
           "I was part of the few people who implemented Asset Manager. Asset Manager is just like google drive and a module of CXM-lite app. Added all the functionality related to the folder and many more in this module.",
         ],
       },
-
       {
         id: "SPACEWEB_CHARTS",
         project: "Spaceweb Charts",
@@ -47,14 +68,6 @@ export const experiences: Experience[] = [
           "Contributed to the sprinklr's charting library by implementing/revamping many features like Legends, Data Labels, Notes, collision detection, Annotations, slanted axes tick and Keyboard Accessibility for screen readers.",
           "Implemented new charts like Stacked Area Chart, Trending/Fading Word Cloud, HeatMap Chart, Click HeatMap Chart, Stacked column support to Multi Axes chart and Smart Cluster Chart to the library. Solved challenging problems while implementing these charts.",
           "I take pride in contributing to the project which now used in sprinklr's platform everywhere for data visualization.",
-        ],
-      },
-      {
-        id: "SURVEYS",
-        project: "Surveys",
-        description: [
-          "I was a part of a very big project which taught me lot of things. Surveys app is basically a app which allows you to create surveys and distribute them.",
-          "I added major features from scratch like MCQ with images question and many other questions, Translation builder, Conversational Survey, Survey using AI, Respondent view of the survey, Controlling Logics and many more.",
         ],
       },
       {
@@ -77,12 +90,30 @@ export const experiences: Experience[] = [
         description: [],
       },
     ],
-    isCurrent: false,
+    skills: ["ReactJs", "NextJs", "Typescript", "Webpack", "GraphQL", "Jest"],
   },
   {
     role: "Product Engineering Intern",
     company: "Sprinklr",
-    years: "0.5",
+    duration: "6 months",
+    from: "Jan 2021",
+    to: "June 2021",
     majorProjects: [{ id: "TODO_APP", project: "ToDo App" }],
+  },
+  {
+    role: "Summer Intern",
+    company: "DAIICT",
+    duration: "2 months",
+    from: "June 2020",
+    to: "Aug 2020",
+    majorProjects: [
+      {
+        id: "TODO_APP",
+        project: "Intelligent Tour Assistant,",
+        description: [
+          "We made a Intelligent Tour Assistant, a Travel planner using Technologies like python, Django, JS, MongoDB, HTML, CSS, etc.",
+        ],
+      },
+    ],
   },
 ];
