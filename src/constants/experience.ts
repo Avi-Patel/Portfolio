@@ -25,13 +25,6 @@ export const experiences: Experience[] = [
           "Code Sharing - Migrated a channel templates repository into the Mono-Repo.",
         ],
       },
-      {
-        id: "LEARNING",
-        project: "Channel Templates Migration",
-        description: [
-          "Code Sharing - Migrated a channel templates repository into the Mono-Repo.",
-        ],
-      },
     ],
     others: [
       "Acquired foundational knowledge in Jenkins, Docker and Kubernetes.",
