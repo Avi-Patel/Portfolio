@@ -13,7 +13,7 @@ import { getYears } from "../utils/getYears";
 import { yellowColor } from "@/constants/colors";
 
 const TITLE = "I'm Avi Patel";
-const SUB_TITLE = "Senior Product Engineer @";
+const SUB_TITLE = "Lead Product Engineer @";
 
 const expInYears = getYears("01 Jan 2021");
 const intro = `I work as a Frontend Developer. With over ${expInYears} Years of experience, my

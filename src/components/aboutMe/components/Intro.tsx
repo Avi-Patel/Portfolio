@@ -45,10 +45,7 @@ export const Intro = () => {
         Apart from professional side,I learn finance and investment
         fundamentals. I like to track companies Financial Performances and
         filters out fundamentally strong stocks for investment. I actively
-        invest in equities. You can find my equity portfolio{" "}
-        <Link href="https://docs.google.com/spreadsheets/d/1WY3d50JvLvVEtyOLNDvjrA7D7dzWpJ3yDj4ogW4Hp4U/edit#gid=0">
-          here.
-        </Link>
+        invest in equities. You can find my equity portfolio.
       </Typography>
     </Box>
   );

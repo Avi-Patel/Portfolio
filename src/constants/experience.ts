@@ -4,9 +4,9 @@ import { Experience } from "@/components/experienceCard/types";
 
 export const experiences: Experience[] = [
   {
-    role: "Senior Product Engineer",
+    role: "Lead Product Engineer",
     company: "Sprinklr",
-    duration: getDurationString("01 June 2024"),
+    duration: getDurationString("June 2025"),
     from: "June 2024",
     to: "Present",
     majorProjects: [
@@ -14,15 +14,36 @@ export const experiences: Experience[] = [
         id: "SURVEYS",
         project: "CFM-App",
         description: [
-          "Developed and successfully launched Customer Feedback Management App",
-          "Collaboration & Product Reach - Collaborated with Mobile and Backend team to add In-App, Website and conversational survey distributions.",
+          "Own and lead end-to-end development of a major CFM product feature — from system design to delivery — while actively collaborating with PMs and designers to ensure a seamless user experience, maintainable architecture, and alignment with roadmap goals.",
+        ],
+      },
+    ],
+    others: [
+      "Led peer code reviews for 3-4 peer developers, improving code quality and reducing bugs by 30%.",
+      "Mentored and managed a summer intern for an AI Scrum Agent project; oversaw design, implementation and delivery aligned with stakeholder expectations.",
+    ],
+    skills: ["ReactJs", "NextJs", "Typescript", "Webpack", "GraphQL", "Jest"],
+  },
+  {
+    role: "Senior Product Engineer",
+    company: "Sprinklr",
+    duration: getDurationString("01 June 2024"),
+    from: "June 2024",
+    to: "June 2025",
+    majorProjects: [
+      {
+        id: "SURVEYS",
+        project: "CFM-App",
+        description: [
+          "Developed Customer Feedback Management App from scratch",
+          "Collaboration & Product Reach - Partnered with Mobile and Backend teams to enable mulƟ-platform survey distribution (In-App, Web, Conversational.",
         ],
       },
       {
         id: "CHANNEL_TEMPLATES",
         project: "Channel Templates Migration",
         description: [
-          "Code Sharing - Migrated a channel templates repository into the Mono-Repo.",
+          "Migrated channel templates to monorepo, enhancing maintainability and team velocity.",
         ],
       },
     ],
