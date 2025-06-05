@@ -45,7 +45,7 @@ export const Intro = () => {
         Apart from professional side,I learn finance and investment
         fundamentals. I like to track companies Financial Performances and
         filters out fundamentally strong stocks for investment. I actively
-        invest in equities. You can find my equity portfolio.
+        invest in equities.
       </Typography>
     </Box>
   );
