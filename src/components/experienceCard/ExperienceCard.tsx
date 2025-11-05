@@ -34,9 +34,12 @@ const ListItem = ({ sentence }: { sentence: string }) => {
 };
 
 export const ExperienceCard = ({ experience }: { experience: Experience }) => {
-  const [selectedProject, setSelectedProject] = useState<Project | undefined>();
   const { role, company, duration, from, to, majorProjects, others, skills } =
     experience;
+
+  const [selectedProject, setSelectedProject] = useState<Project | undefined>(
+    majorProjects[0]
+  );
 
   const isMobileDevice = useIsMobileDevice();
 

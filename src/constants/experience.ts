@@ -7,7 +7,7 @@ export const experiences: Experience[] = [
     role: "Lead Product Engineer",
     company: "Sprinklr",
     duration: getDurationString("June 2025"),
-    from: "June 2024",
+    from: "June 2025",
     to: "Present",
     majorProjects: [
       {
@@ -27,7 +27,7 @@ export const experiences: Experience[] = [
   {
     role: "Senior Product Engineer",
     company: "Sprinklr",
-    duration: getDurationString("01 June 2024"),
+    duration: "1 year",
     from: "June 2024",
     to: "June 2025",
     majorProjects: [
